@@ -1,0 +1,3 @@
+D:/WirtualnyEkosystem/cmake-build-debug/CMakeFiles/WirtualnyEkosystem.dir
+D:/WirtualnyEkosystem/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/WirtualnyEkosystem/cmake-build-debug/CMakeFiles/rebuild_cache.dir
