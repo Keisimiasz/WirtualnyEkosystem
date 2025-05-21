@@ -1,0 +1,1005 @@
+Lab1:
+1. Co to jest zintegrowane środowisko programistyczne (IDE)?
+IDE to aplikacja ułatwiająca programowanie, łącząca edytor kodu, kompilator, debugger i inne narzędzia. Przykłady: Visual Studio Code, PyCharm, IntelliJ IDEA.
+
+2. Jaki jest związek między C a C++?
+C++ to rozszerzenie C, dodające programowanie obiektowe i inne funkcje. C jest proceduralny i używany w systemach niskopoziomowych, a C++ wspiera obiektowość i jest stosowany np. w grach i aplikacjach.
+
+3. Jak wygląda struktura najprostszego programu w C++?
+Program składa się z:
+
+#include <iostream> – do obsługi wejścia/wyjścia,
+int main() {} – głównej funkcji programu,
+std::cout << "Hello, World!"; – wyświetlenia tekstu,
+return 0; – zakończenia programu.
+
+
+Lab2:
+
+
+1.Różnica między statycznym a dynamicznym typowaniem:
+
+Statyczne typowanie oznacza, że typ zmiennej jest określany w czasie kompilacji (np. w C, C++).
+Dynamiczne typowanie oznacza, że typ zmiennej jest przypisywany w czasie wykonania programu (np. w Pythonie, JavaScript).
+
+2.Hermetyzacja: Hermetyzacja (enkapsulacja) to zasada programowania obiektowego, która polega na ukrywaniu szczegółów implementacyjnych klasy przed użytkownikami tej klasy i udostępnianiu tylko wybranych metod, które umożliwiają interakcję z obiektem.
+
+3.Wartość zmiennej k w podanych miejscach:
+
+Listing 2.2:
+Po linii 10: k = 3, w pętli while(k < 10) zmienna k zostanie zwiększona zgodnie z warunkami (do momentu, kiedy k osiągnie 7).
+Po linii 19: W wyniku działania instrukcji switch, wartość k będzie wynosiła 0 (ze względu na default).
+Po linii 22: Zmienna k zostanie zmniejszona do 4 (po wykonaniu pętli for).
+
+4.Niepoprawne deklaracje zmiennych w listing 2.3:
+
+Linia 1: unsigned int = -3; – brak nazwy zmiennej.
+Linia 7: long = 3.2; – brak nazwy zmiennej i przypisanie liczby zmiennoprzecinkowej do typu long.
+Linia 8: unsigned double y = 3.5; – typ unsigned nie jest stosowany do zmiennych typu double.
+
+Odp do listingow:
+
+Jakie rozszerzenie ma plik nagłówkowy i po co on jest?
+
+Plik nagłówkowy w C++ ma rozszerzenie .h. Służy do deklarowania klas, funkcji, zmiennych i stałych, które mogą być używane w innych plikach źródłowych. Dzięki temu kod jest bardziej modularny i łatwiejszy do zarządzania .
+Jakie rozszerzenie ma plik źródłowy i po co on jest?
+
+Plik źródłowy w C++ ma rozszerzenie .cpp. Zawiera definicje funkcji i metod zadeklarowanych w plikach nagłówkowych. Kompilator przetwarza pliki źródłowe, aby stworzyć plik wykonywalny .
+Listing 2.6, wiersze 1-3 → Jaki jest efekt dyrektywy include?
+
+Dyrektywa #include włącza zawartość wskazanego pliku do kodu źródłowego przed jego kompilacją. W listingu 2.6 #include "zlab02.h", #include <iostream>, #include <limits> umożliwia korzystanie z deklaracji z pliku nagłówkowego oraz funkcji wejścia/wyjścia i funkcji określających zakresy typów liczbowych .
+Co oznacza operator :: (np. w linii 4 na listingu 2.5)?
+
+Operator :: (operator zakresu) pozwala na określenie, do której klasy lub przestrzeni nazw należy dana funkcja lub zmienna. W listingu 2.5 void ZLab02::zadanie_2_3() oznacza, że funkcja zadanie_2_3() należy do klasy ZLab02 .
+Listing 2.7, wiersz 15 i 19 → Dlaczego zastosowany został typ long?
+
+Typ long został zastosowany, aby uniknąć przepełnienia wartości liczbowych podczas obliczeń zakresów dla typów int i unsigned int .
+Jaki jest efekt słowa endl?
+
+endl powoduje przejście do nowej linii i wymusza opróżnienie bufora strumienia wyjściowego cout .
+Dlaczego wyniki dzielenia są różne?
+
+Różnice wynikają z typów zmiennych. Jeśli a i b są typu int, to a / b wykonuje dzielenie całkowite, ignorując część ułamkową. Natomiast rzutowanie na double przed dzieleniem pozwala uzyskać precyzyjny wynik zmiennoprzecinkowy .
+Listing 2.9, wiersz 5 → Co tu się dzieje?
+
+W tym wierszu double e = static_cast<double>(a)/static_cast<double>(b); rzutuje a i b na double, dzięki czemu wynik dzielenia będzie precyzyjniejszy i uwzględni część ułamkową .
+Listing 2.12, wiersz 2 → Czy zmienna wybor może mieć typ double?
+
+Nie, ponieważ zmienna wybor jest używana w instrukcji switch, a switch działa tylko na typach całkowitych (int, char, enum) .
+Listing 2.12, wiersz 2 → Czy zmienna wybor może mieć typ int?
+
+Tak, zmienna wybor może być typu int, ponieważ jest używana w instrukcji switch, która obsługuje wartości całkowite .
+Listing 2.12, wiersz 11 → Co oznacza ||?
+
+Operator || oznacza logiczne lub. Wyrażenie wybor < 3 || wybor > 5 zwróci true, jeśli wybor będzie mniejsze niż 3 lub większe niż 5 .
+Listing 2.12, wiersze 14-16 → Jaka jest rola słowa break?
+
+break przerywa wykonanie switch, zapobiegając wykonaniu kolejnych przypadków w instrukcji wyboru .
+Listing 2.14, wiersz 5 → W jakim celu wskaźnikowi nadaje się wartość nullptr?
+
+nullptr oznacza, że wskaźnik nie wskazuje na żadną istotną wartość. Jest to dobry sposób na uniknięcie użycia niezainicjalizowanego wskaźnika .
+Listing 2.14, wiersz 11 → Jak działa operator &?
+
+Operator & pobiera adres zmiennej i zwraca wskaźnik na tę zmienną .
+Listing 2.14, wiersz 13 → Po co jest znak *?
+
+* oznacza dereferencję wskaźnika, czyli pozwala na dostęp do wartości, na którą wskazuje wskaźnik .
+Listing 2.17, wiersz 3 → Jaki będzie efekt wywołania instrukcji?
+
+int tab[N]; deklaruje tablicę tab o N elementach, które będą przechowywać losowe liczby .
+Listing 2.17, wiersz 6 → Co tu się dzieje?
+
+uniform_int_distribution<short> dystr(min,max); tworzy generator liczb losowych w zadanym przedziale min do max .
+Listing 2.16, wiersz 11 → Jakie instrukcje znajdują się w bloku pętli while?
+
+Wewnętrzna pętla while losuje liczbę i sprawdza, czy jest większa od poprzedniej, w przeciwnym razie ponawia losowanie .
+Listing 2.16, wiersz 11 → Jak w ogóle działa pętla while?
+
+while wykonuje kod w swojej pętli dopóki warunek jest spełniony. W tym przypadku generuje liczby do momentu uzyskania ciągu niemalejącego .
+Czy może zdarzyć się, że warunek zakończenia pętli while nie wystąpi?
+
+Tak, jeśli generator liczb losowych nie wygeneruje odpowiedniej wartości, pętla while może teoretycznie wykonywać się w nieskończoność .
+Czy zaproponowany algorytm można zastosować do wygenerowania ciągu rosnącego?
+
+Tak, można zmodyfikować algorytm tak, aby generował liczby w sposób ściśle rosnący, na przykład dodając inkrementację zamiast losowania do momentu spełnienia warunku .
+
+
+Lab3:
+
+
+1.Różnica pomiędzy klasą a obiektem klasy:
+
+Klasa to szablon, definicja, lub typ, który opisuje właściwości i zachowanie obiektów (np. pola, metody).
+Obiekt klasy to instancja klasy, czyli konkretny egzemplarz, który jest tworzony na podstawie klasy.
+
+2.Składniki klasy: Składnikami klasy mogą być:
+
+Pola (atrybuty): Zmienna, która przechowuje dane obiektu.
+Metody (funkcje członkowskie): Operacje lub akcje, które obiekt może wykonywać.
+Konstruktory: Specjalne metody, które inicjalizują obiekt.
+Destruktory: Metody, które wykonują akcje przy usuwaniu obiektu.
+
+3.Proces tworzenia obiektu: Tworzenie obiektu klasy polega na:
+
+Zadeklarowaniu zmiennej, która jest instancją klasy.
+Użyciu konstruktora, aby przypisać początkowe wartości do atrybutów obiektu.
+Obiekt jest tworzony w pamięci na stosie lub stercie, w zależności od sposobu deklaracji.
+
+4.Metoda uruchamiająca się przy usuwaniu obiektu:
+
+Destruktor to metoda, która uruchamia się automatycznie, gdy obiekt jest usuwany z pamięci. Służy do zwalniania zasobów zajmowanych przez obiekt, np. pamięci. W języku C++ jest to metoda o nazwie klasy poprzedzonej tyldą (~), np. ~Klasa().
+
+Odp do listingow: 
+
+Listing 3.2
+Wiersz 10 – Jakie wartości można podstawić pod zmienną nazwa?
+
+Można przypisać dowolny ciąg znaków (std::string). Domyślną wartością jest "?" .
+Wiersz 11 – Czy w main() można podstawić obiektKlasy.bok1 = 3?
+
+Nie, ponieważ bok1 jest prywatnym polem klasy Prostokat .
+Wiersz 15 – Jaką wartość zwraca metoda czyPoprawny?
+
+Zwraca true, jeśli długości boków są dodatnie, w przeciwnym razie false .
+Wiersz 16 – Czy można wywołać obiektKlasy.obliczObwod() w main()?
+
+Nie, obliczObwod() jest metodą prywatną .
+Wiersz 20 – Efekt użycia domyślnych wartości argumentów metody
+
+Jeśli obiekt zostanie utworzony jako Prostokat p;, wartości domyślne to "?", 1.0, 2.0 .
+Wiersz 15 i 22 – Czym różnią się metody?
+
+czyPoprawny(double, double) sprawdza podane wartości, natomiast czyPoprawny() zwraca stan obiektu. Jest to przeciążenie metod .
+Wiersz 23 – Co zwraca metoda?
+
+const std::string& – zwraca referencję na nazwa .
+Wiersz 28 – Co oznacza std::? Czy jest konieczne?
+
+std:: odnosi się do przestrzeni nazw standardowej biblioteki C++. Można go pominąć, jeśli wcześniej użyto using namespace std; .
+Listing 3.3
+Wiersz 1 – Co oznacza Prostokat::?
+
+To operator zakresu, który określa, że metoda czyPoprawny() należy do klasy Prostokat .
+Wiersz 2 – Skąd bierze się zwracana wartość?
+
+czyPoprawny() zwraca wartość zmiennej poprawny, która została ustawiona podczas tworzenia obiektu .
+Listing 3.6
+Wiersz 1 – Co oznacza :nazwa(n)?
+
+To lista inicjalizacyjna, która przypisuje n do nazwa. Można to zastąpić przypisaniem w { }, ale lista inicjalizacyjna jest preferowana dla const i referencji .
+Wiersz 11 – Jaką wartość będzie miało bok2?
+
+Jeśli bok1 i bok2 są niepoprawne, zostaną ustawione na 0 .
+Listing 3.7
+Czy std:: jest konieczne?
+Tylko jeśli wcześniej nie użyto using namespace std; .
+Listing 3.12
+Jak działa metoda? Dlaczego można wywoływać metody prywatne?
+Metoda zmienBoki() wywołuje czyPoprawny(), obliczObwod() i obliczPole(), które są prywatne. Można to zrobić, ponieważ są częścią tej samej klasy .
+Listing 3.13
+Wiersze 5, 6, 9 – Co robi std::to_string()?
+Konwertuje liczby (double) na std::string .
+Listing 3.14
+Wiersze 14-16 – Jak uzyskać dostęp do pola/metody obiektu?
+
+Za pomocą operatora . np. p2.podajObwod() .
+Wiersz 9 – Jakie wartości przyjmuje konstruktor?
+
+Ciąg znaków n oraz dwie liczby zmiennoprzecinkowe a i b .
+Wiersz 13 – Co robi precision na cout?
+
+Ustawia liczbę cyfr po przecinku .
+Wiersze 14-16 – Dlaczego precision nie działa tu?
+
+to_string() formatuje liczby niezależnie od cout.precision() .
+Wiersze 21-25 – Ile instrukcji jest w tych wierszach?
+
+Cztery wywołania metod na p2 .
+Czy można zmienić p1.nazwa = "Inna nazwa"?
+
+Nie, ponieważ nazwa jest prywatna .
+Czy destruktor się uruchamia?
+
+Tak, ponieważ każdy obiekt ma automatycznie wywołany destruktor przy końcu zasięgu .
+Listing 3.15
+Co oznacza „pączkujący” obiekt klasy Organizm?
+
+paczkujacy() zwraca true, jeśli organizm zjadł więcej niż kosztPotomka .
+Wiersze 4-5 – Efekt const?
+
+limitPosilkow i kosztPotomka nie mogą być zmieniane po inicjalizacji .
+Wiersze 8-9 – Dlaczego licznikZycia i licznikPosilkow nie mogą być const?
+
+Ponieważ zmieniają swoją wartość w trakcie symulacji .
+Wiersz 16 – Co oznacza const w metodzie?
+
+Metoda nie może zmieniać pól obiektu .
+Które metody można wywołać na obiekcie Organizm?
+
+Wszystkie publiczne metody .
+Które metody można wywołać na const Organizm?
+
+Tylko metody oznaczone jako const .
+Czy można utworzyć Organizm organizmPusty;?
+
+Nie, ponieważ nie ma domyślnego konstruktora .
+Listing 3.16-3.22
+Co robi metoda posilek?
+
+Zwiększa licznikPosilkow .
+Co robi metoda potomek?
+
+Sprawdza, czy organizm może się rozmnożyć .
+Co robi metoda krokSymulacji?
+
+Zmniejsza licznikZycia, jeśli organizm żyje .
+Co robi funkcja drukujOrganizm()?
+
+Wyświetla stan organizmu .
+Jaki konstruktor został użyty w Listing 3.22?
+
+Konstruktor z trzema parametrami .
+Na czym polega test niezależności obiektów?
+
+Sprawdza, czy zmiana jednego obiektu nie wpływa na inny .
+Na czym polega test symulacji?
+
+Sprawdza działanie organizmu w ekosystemie .
+
+
+Lab4:
+
+
+1.Typ wyliczeniowy w języku C++: Typ wyliczeniowy (ang. enum) to specjalny typ danych, który pozwala na tworzenie zmiennych, które mogą przyjmować jedną z kilku ustalonych, nazwanych wartości. Dzięki temu kod jest bardziej czytelny i łatwiejszy do utrzymania.
+
+enum DzieńTygodnia { Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota, Niedziela };
+
+DzieńTygodnia dzisiaj = Środa;
+
+if (dzisiaj == Środa) {
+    std::cout << "Dziś jest środa!" << std::endl;
+}
+W tym przykładzie typ DzieńTygodnia definiuje dni tygodnia jako wartości wyliczeniowe. Każdy z tych dni jest reprezentowany przez liczbę (np. Poniedziałek = 0, Wtorek = 1 itd.), ale dzięki nazwom, kod jest bardziej zrozumiały.
+
+2.Składniki statyczne klasy: Składniki statyczne klasy to zmienne i metody, które są wspólne dla wszystkich obiektów tej klasy. Zamiast tworzyć kopię zmiennej w każdym obiekcie, zmienna statyczna jest jedna i współdzielona przez wszystkie instancje klasy. Aby zadeklarować zmienną lub metodę jako statyczną, używamy słowa kluczowego static.
+
+3.Wzorzec projektowy klasy: Wzorzec projektowy (ang. design pattern) to sprawdzone rozwiązanie określonego problemu w programowaniu obiektowym. Wzorce projektowe pomagają w tworzeniu elastycznych, łatwych w utrzymaniu i rozszerzalnych aplikacji. Są to zalecane metody organizacji kodu, które ułatwiają rozwiązywanie powszechnych problemów projektowych.
+
+Przykład: Wzorzec Singleton: Wzorzec Singleton zapewnia, że w danym czasie istnieje tylko jedna instancja danej klasy, a także umożliwia dostęp do tej instancji z dowolnego miejsca w programie.
+W kodzie: 
+class Singleton {
+private:
+    static Singleton* instancja;
+    
+    Singleton() {}  // Konstruktor prywatny
+
+public:
+    static Singleton* getInstancja() {
+        if (instancja == nullptr) {
+            instancja = new Singleton();
+        }
+        return instancja;
+    }
+};
+
+Singleton* Singleton::instancja = nullptr;
+
+int main() {
+    Singleton* obj1 = Singleton::getInstancja();
+    Singleton* obj2 = Singleton::getInstancja();
+    
+    if (obj1 == obj2) {
+        std::cout << "To ta sama instancja!" << std::endl;
+    }
+}
+
+Wzorzec Singleton gwarantuje, że obiekt klasy Singleton jest tworzony tylko raz, a wszystkie żądania dostępu odnoszą się do tej samej instancji.
+
+Odp do listingow:
+Listing 4.2, wiersz 1 → Typ wyliczeniowy RodzajMieszkanca przyjmuje wartości: GLON, GRZYB, BAKTERIA, PUSTKA, SCIANA, TRUP, NIEZNANE.
+
+Listing 4.3, wiersze 5-12 → Znajduje się tu kilka instrukcji, takich jak deklaracje zmiennych i przypisania.
+
+Listing 4.3, wiersze 14-28 → Ten fragment zawiera więcej instrukcji, w tym warunki i operacje logiczne.
+
+Listing 4.3, wiersze 32-36 → || to operator logiczny „lub” (logical OR). Wartość wyrażenia jest true, jeśli przynajmniej jeden operand jest true.
+
+Listing 4.3, wiersze 30-37 → Metoda poprawnyZnakNiszy sprawdza, czy dany znak należy do predefiniowanego zestawu znaków.
+
+Listing 4.3, wiersze 38-41 → Metoda zwraca wartość poprzez sprawdzenie zgodności znaku.
+
+Listing 4.3, wiersze 44, 44 → Są to konstruktory klasy. Jeden z nich używa {} do inicjalizacji, a drugi działa bez tego, ponieważ może polegać na domyślnych konstruktorach składowych.
+
+Listing 4.4, wiersze 1-5 → Funkcja wyswietl nie zmienia trwale ustawień symulacji, tylko je wyświetla.
+
+Listing 4.4 → Singleton UstawieniaSymulacji zapewnia, że istnieje tylko jeden obiekt tej klasy.
+
+Listing 4.5 → Klasa GeneratorLosowy uniemożliwia tworzenie instancji dzięki prywatnemu konstruktorowi.
+
+Listing 4.5, wiersz 6 → Można uniknąć std:: poprzez using namespace std; lub using std::random_device;.
+
+Listing 4.5, wiersz 17 → typedef GeneratorLosowy GEN; definiuje skrót GEN, co upraszcza kod.
+
+Listing 4.6 → Składnik statyczny musi być zdefiniowany w pliku .cpp, ponieważ jego deklaracja w .h nie wystarczy.
+
+Listing 4.7, wiersze 4-8 → Fragment kodu zamienia wartości, jeśli min > max, zapewniając poprawne działanie funkcji losującej.
+
+Listing 4.9 → Metoda losujOdZeraDo(int max) nie może wywołać losujPomiedzy(0, max), ponieważ losujPomiedzy wymaga dwóch argumentów o określonych typach.
+
+
+Lab 5: 
+1. Różnica między wskaźnikiem do stałej a stałym wskaźnikiem
+Wskaźnik do stałej (const int *w1):
+
+Można zmieniać adres (np. w1 = &a → w1 = &b).
+
+Nie można modyfikować wartości (*w1 = 5 → błąd).
+
+const int a = 1;
+w1 = &a; // OK
+w1 = &b; // OK (zmiana adresu)
+// *w1 = 5; // Błąd!
+
+Stały wskaźnik (int *const w2 = &c):
+
+Nie można zmieniać adresu (w2 = &d → błąd).
+
+Można modyfikować wartość (*w2 = 5 → OK).
+
+Przykład:
+int c = 3;
+int *const w2 = &c; // Inicjalizacja obowiązkowa
+// w2 = &d; // Błąd!
+*w2 = 5;    // OK (zmiana wartości)
+Czy można połączyć oba?
+Tak: const int *const w3 = &a – nie można zmienić ani adresu, ani wartości.
+
+2. Cel przekazywania stałej referencji/wskaźnika do metody
+Dlaczego nie kopia?
+
+Wydajność: Dla dużych obiektów (np. std::vector, bazy danych) kopia jest kosztowna.
+
+Bezpieczeństwo: Stała referencja/wskaźnik (const) blokuje modyfikacje oryginału.
+
+Niekopiowalność: Niektóre obiekty (np. std::mutex, std::unique_ptr) nie mogą być kopiowane.
+
+Kopia wystarczy tylko gdy:
+
+Obiekt jest mały (kopiowanie jest tanie).
+
+Metoda potrzebuje lokalnej modyfikowalnej kopii (np. do transformacji).
+
+3. Polimorfizm statyczny (przykład: GeneratorLosowy)
+Definicja: Wybór metody w czasie kompilacji (np. przez przeciążanie).
+
+W klasie GeneratorLosowy:
+static unsigned short losujPomiedzy(unsigned short, unsigned short); // Wersja 1
+static long losujPomiedzy(long, long);                               // Wersja 2
+Działanie:
+GEN::losujPomiedzy(10, 20);    // Wywoła metodę dla `unsigned short`  
+GEN::losujPomiedzy(100L, 200L); // Wywoła metodę dla `long`  
+Zalety:
+
+Brak narzutu (dynamiczne wiązanie np. funkcje wirtualne są wolniejsze).
+
+Jednolity interfejs dla różnych typów (np. short, long).
+
+Podsumowanie: Polimorfizm statyczny w C++ realizuje się przez przeciążanie metod/szablony, a GeneratorLosowy wykorzystuje go do generowania liczb dla różnych typów.
+
+Odp do listingow:
+Listing 5.1 → Typy RodzajMieszkanca i Polozenie są prawdopodobnie zdefiniowane w osobnych plikach nagłówkowych.
+
+Listing 5.1, wiersze 28-33 → Argumenty metody są przekazywane przez referencję (long & wiersz, long & kolumna), co umożliwia ich modyfikację w funkcji.
+
+Listing 5.2, wiersz 15 → nullptr oznacza wskaźnik nie wskazujący na żadną pamięć i zastępuje NULL w C++11.
+
+Listing 5.3, wiersze 4-5 → static_cast<Polozenie>(GeneratorLosowy::losujPomiedzy(min, max)) konwertuje losową liczbę na wartość Polozenie.
+
+Listing 5.4 → auto automatycznie określa typ zmiennej na podstawie przypisanej wartości.
+
+Listing 5.5, linia 5 → *elementWewnetrzny(polozenie) = rodzaj; oznacza przypisanie wartości do wskaźnika.
+
+Listing 5.6 → Metoda ktoJestSasiadem() zwraca RodzajMieszkanca przez dereferencję wskaźnika.
+
+Listing 5.7 → Dwie pętle for iterują po tablicy 3x3, omijając środek.
+
+Listing 5.8, wiersze 8-9 → Jeśli nie istnieje RodzajMieszkanca w sąsiedztwie, pętla while może się nie zakończyć.
+
+Listing 5.9 → Metoda zmienia indeksy macierzy 3x3 zgodnie z Polozenie, przesuwając wiersz i kolumna.
+
+Listing 5.10 → static_cast<long> rzutuje unsigned int na long, aby umożliwić operacje arytmetyczne.
+
+Listing 5.9 i 5.10 – polimorfizm?
+
+Tak, ponieważ metody zmienIdeksyWgPolozenia() są przeciążone (polimorfizm statyczny).
+Listing 5.12, wiersz 49 – rzutowanie?
+
+static_cast<Polozenie>(i); konwertuje int na Polozenie, aby uniknąć niejawnych konwersji.
+Listing 5.12, wiersze 52-53 → Wywołano zmienIdeksyWgPolozenia(Polozenie, long&, long&), ponieważ argumenty to long.
+
+Lab6:
+1. Czym jest dziedziczenie?
+Dziedziczenie to mechanizm programowania obiektowego, który pozwala na tworzenie nowych klas na podstawie już istniejących. Klasa bazowa (rodzic) przekazuje swoje właściwości i metody do klasy pochodnej (dziecko), co pozwala na ponowne wykorzystanie kodu i jego rozszerzanie bez konieczności duplikacji.
+
+2. Co się dziedziczy, a co nie?
+Dziedziczą się:
+
+Pola (zmienne członkowskie) – jeśli są oznaczone jako public lub protected,
+
+Metody – mogą być nadpisywane w klasach pochodnych,
+
+Właściwości – jeśli nie są oznaczone jako private,
+
+Konstruktor klasy bazowej może być wywołany przez klasę pochodną.
+
+Nie dziedziczą się:
+
+Prywatne składowe (private) – są dostępne tylko w obrębie klasy bazowej,
+
+Konstruktory – choć można je wywoływać w klasach pochodnych, nie są one dziedziczone,
+
+Destruktory – każda klasa ma własny destruktor,
+
+Operatory przypisania – domyślnie nie są dziedziczone, ale można je przeciążać.
+
+3. Jak sterować widocznością składników?
+Widoczność elementów w klasie bazowej wpływa na ich dostępność w klasach pochodnych:
+
+public – dostępne wszędzie, także w klasach pochodnych,
+
+protected – dostępne w klasie bazowej i klasach dziedziczących, ale nie na zewnątrz,
+
+private – dostępne tylko w obrębie klasy bazowej.
+
+Podczas dziedziczenia można także zmieniać poziom dostępu:
+
+public dziedziczenie zachowuje dostępność składników,
+
+protected dziedziczenie sprawia, że publiczne składowe klasy bazowej stają się protected w klasie pochodnej,
+
+private dziedziczenie powoduje, że wszystkie publiczne i chronione składniki stają się prywatne.
+
+4. Jak utworzyć metodę wirtualną?
+Metoda wirtualna to metoda, którą można nadpisać w klasie pochodnej. Aby ją utworzyć w C++, należy użyć słowa kluczowego virtual:
+
+class Bazowa {
+public:
+    virtual void Wyswietl() { std::cout << "Metoda z klasy bazowej"; }
+};
+W klasie pochodnej można ją nadpisać:
+
+class Pochodna : public Bazowa {
+public:
+    void Wyswietl() override { std::cout << "Metoda z klasy pochodnej"; }
+};
+Dzięki temu wywołanie metody przez wskaźnik do klasy bazowej wywoła metodę z klasy pochodnej.
+
+5. Na czym polega polimorfizm dynamiczny?
+Polimorfizm dynamiczny to zdolność obiektów do wywoływania odpowiednich metod w zależności od rzeczywistego typu obiektu, a nie od typu wskaźnika lub referencji. Jest realizowany za pomocą metod wirtualnych i tablicy wirtualnych funkcji (vtable).
+
+Przykład:
+
+Bazowa* obiekt = new Pochodna();
+obiekt->Wyswietl(); // Wywoła metodę z Pochodna, jeśli Wyswietl() jest wirtualna.
+Dzięki temu można tworzyć elastyczne i rozszerzalne programy bez konieczności modyfikowania kodu bazowego.
+
+Odp do listingow:
+Listing 6.2, wiersz 4 → Skąd się wzięła metoda doTekstu w klasie Kwadrat?
+Pochodzi z klasy bazowej Figura. Kwadrat dziedziczy doTekstu jako metodę wirtualną i może ją przesłaniać (override).
+
+Listing 6.2, wiersz 6 → Dlaczego to nie zadziała?
+Ponieważ metoda doTekstu w klasie Figura może być czysto wirtualna (=0), a nie została zaimplementowana w Kwadrat, lub obiekt nie ma kontekstu dynamicznego (brak virtual).
+
+Listing 6.3, wiersze 5–6 → Jak działa konstruktor klasy Kwadrat?
+Wywołuje konstruktor klasy bazowej Figura z parametrem, następnie inicjalizuje własne pole bok.
+
+Listing 6.6, wiersz 12 → Po co jest znak &?
+To referencja — przekazujemy obiekt Kwadrat przez referencję, by uniknąć kopiowania i umożliwić polimorfizm.
+
+Listing 6.7, wiersz 12 → Czy można byłoby użyć tutaj pierwszej referencji?
+Tak, ale jeśli const Figura&, to tylko do metod const. W przeciwnym razie nie.
+
+Listing 6.8, wiersze 5 i 6 → Co oznacza =0?
+To metoda czysto wirtualna – klasa staje się abstrakcyjna i nie można jej instancjonować.
+
+Listing 6.10 → Czy zamiast referencji można użyć wskaźnika?
+Tak, referencję Figura& można zastąpić Figura*, ale trzeba jawnie dereferencjonować.
+
+Czy można utworzyć obiekt klasy Mieszkaniec?
+Nie, jeśli zawiera metody czysto wirtualne (=0). Wtedy jest klasą abstrakcyjną.
+
+Czy można utworzyć obiekt klasy ZamiarMieszkanca?
+Tak, jeśli nie zawiera metod czysto wirtualnych.
+
+Listing 6.11, wiersze 6 i 7 → Co oznaczają „= NIC” oraz „= NIGDZIE”?
+To inicjalizacja pól wartościami domyślnymi – zapewnia, że obiekt ma określony stan początkowy.
+
+Listing 6.12, wiersz 1 → Czy class Sasiedztwo można zastąpić #include "sasiedztwo.h"?
+Nie zawsze. class Sasiedztwo; to tzw. forward declaration. Używane, gdy wystarczy informacja o istnieniu klasy. #include jest potrzebny, jeśli korzystasz z jej definicji.
+
+Listing 6.12, wiersz 13 → Jak nazywa się ta metoda?
+To konstruktor klasy, nosi nazwę klasy Sasiedztwo.
+
+Listing 6.15, wiersz 15 → Co powoduje słowo final?
+Oznacza, że metoda nie może być dalej przesłaniana (override) w klasach pochodnych.
+
+Listing 6.12 → Które metody są abstrakcyjne?
+Wszystkie oznaczone =0, czyli np. opis() = 0; lub dzialaj() = 0; w klasach bazowych.
+
+
+Lab7:
+
+Przeciążenie operatora przypisania (operator=) w klasie Nisza przedstawione w listingu 7.14 to przykład tzw. "przypisania przez zamianę". Jest to prosty i bezpieczny sposób na przeciążenie operatora przypisania, szczególnie gdy mamy do czynienia z zasobami dynamicznymi (np. wskaźnikami), które wymagają odpowiedniego zarządzania. Poniżej krok po kroku, jak działa ta metoda:
+Nisza &Nisza::operator=(Nisza &innaNisza) {
+    Mieszkaniec * tmp = lokator;
+    lokator = innaNisza.lokator;
+    innaNisza.lokator = tmp;
+    return *this;
+}
+Wyjaśnienie działania:
+Mieszkaniec * tmp = lokator;
+Zapisujemy aktualnego lokatora tego obiektu (this) do tymczasowej zmiennej tmp. To jest zabezpieczenie przed utratą danych.
+
+lokator = innaNisza.lokator;
+Przypisujemy wskaźnik z innego obiektu (innaNisza) do bieżącego obiektu (this). Teraz this->lokator wskazuje na tego samego mieszkańca, co innaNisza->lokator.
+
+innaNisza.lokator = tmp;
+Do obiektu innaNisza wstawiamy naszego wcześniejszego lokatora. Czyli oba obiekty "zamieniają się" mieszkańcami.
+
+return *this;
+Zwracamy referencję do aktualnego obiektu, co pozwala na łańcuchowe przypisania typu a = b = c;.
+
+Zalety tego podejścia:
+Bezpieczne zarządzanie zasobami – nie ma potrzeby ręcznego zwalniania pamięci ani kopiowania mieszkańca.
+
+Efektywność – tylko wskaźniki są zamieniane, nie ma głębokiej kopii.
+
+Brak wycieków pamięci, jeśli pozostałe elementy klasy są dobrze zaimplementowane (np. destruktor).
+
+Lab9:
+1. Na czym polega polimorfizm statyczny?
+Polimorfizm statyczny (kompilacyjny) polega na wiązaniu wywołania funkcji z jej definicją w czasie kompilacji. Przykłady to:
+
+Przeciążanie funkcji (overloading),
+
+Szablony (templates),
+
+Przeciążanie operatorów.
+
+2. Na czym polega polimorfizm dynamiczny?
+Polimorfizm dynamiczny (runtime) polega na wywoływaniu odpowiedniej wersji metody w zależności od typu obiektu w czasie wykonywania programu. Wymaga użycia wskaźników lub referencji do klas bazowych oraz słowa kluczowego virtual:
+
+class Base { public: virtual void foo(); };
+class Derived : public Base { public: void foo() override; };
+3. Czy w języku C++ jest możliwe połączenie polimorfizmu dynamicznego i statycznego?
+Tak, C++ pozwala łączyć oba rodzaje polimorfizmu w jednym programie. Można mieć klasy z metodami virtual (dynamiczny) i jednocześnie używać np. szablonów lub przeciążenia funkcji (statyczny).
+
+4. Czy mechanizm wartości domyślnych argumentów metod zalicza się do polimorfizmu?
+Nie. Domyślne argumenty nie są polimorfizmem — to tylko ułatwienie składniowe na etapie kompilacji. Nie wpływają na wybór przeciążonej wersji metody ani nie zmieniają zachowania w czasie wykonywania.
+
+5. Czy polimorfizm statyczny się dziedziczy?
+Nie w sensie klasycznym. Przeciążanie funkcji nie jest dziedziczone automatycznie — trzeba jawnie udostępnić przeciążone wersje z klasy bazowej (np. za pomocą using), żeby były dostępne w klasie pochodnej.
+
+6. Czy argumenty domyślne się dziedziczy?
+Argumenty domyślne nie są dziedziczone. Jeśli metoda z klasy bazowej ma domyślne argumenty, to w klasie pochodnej należy je ponownie zadeklarować, jeśli chcemy je tam również mieć.
+
+7. Co się dzieje, gdy istnieje już polimorfizm, ale usunie się słowo virtual?
+Usunięcie virtual powoduje, że przestaje działać mechanizm dynamicznego wiązania. Wywołania metod będą rozwiązywane statycznie (wg typu wskaźnika), co może prowadzić do błędów (np. metoda klasy pochodnej nie zostanie wywołana przez wskaźnik do klasy bazowej).
+
+8. Po co są te „polimorfizmy”?
+Polimorfizm ułatwia projektowanie elastycznego i rozszerzalnego kodu:
+
+Statyczny – zwiększa czytelność i umożliwia wielokrotne użycie kodu (np. szablony).
+
+Dynamiczny – pozwala na programowanie obiektowe, gdzie można traktować różne obiekty w jednolity sposób (np. lista wskaźników do klasy bazowej).
+
+9. W jaki sposób w języku C++ pobiera się i zwalnia pamięć?
+
+Pobieranie: new
+
+int* ptr = new int;
+Zwalnianie: delete
+
+delete ptr;
+Dla tablic:
+
+int* arr = new int[10];
+delete[] arr;
+Od C++11 można także używać inteligentnych wskaźników (std::unique_ptr, std::shared_ptr), które automatycznie zarządzają pamięcią.
+
+Listing 9.1:
+Czy rozmiar zmiennej wskaźnikowej zależy od typu na jaki ten wskaźnik pokazuje?
+Nie, rozmiar zmiennej wskaźnikowej nie zależy od typu, na jaki ten wskaźnik pokazuje.
+
+Listing 9.2:
+1. Wiersz 11: delete wskInt1D; — Jaki byłby efekt, gdyby tego wiersza nie było?
+Jeśli nie wywołalibyśmy delete, to:
+
+➡️ Zmienna wskInt1D nadal wskazywałaby na zaalokowaną dynamicznie pamięć (new int), ale ta pamięć nigdy nie zostałaby zwolniona.
+➡️ To prowadzi do wycieku pamięci (memory leak) – pamięć zostałaby zarezerwowana na czas działania programu, ale program już by z niej nie korzystał i nie mógł jej odzyskać.
+
+🔴 Skutek:
+
+Dla małych programów: brak widocznych problemów.
+
+Dla większych (np. z wieloma alokacjami w pętli): wzrost zużycia pamięci, spowolnienia, a nawet awarie (brak pamięci).
+
+2. Wiersze 5 i 7: Po co jest znak *?
+Znak * w tych miejscach służy do dereferencji wskaźnika, czyli:
+
+*wskInt1D = 5; – zapisanie wartości 5 do miejsca w pamięci, na które wskazuje wskaźnik.
+
+*wskInt1D + 3 – odczytanie tej wartości i dodanie 3 do niej.
+
+📌 Bez *, operowalibyśmy na adresie, nie na zawartości!
+
+3. Co oznacza zapis: int ** wskInt2D = nullptr;?
+To oznacza:
+
+➡️ wskInt2D to wskaźnik na wskaźnik typu int (czyli: int**).
+➡️ Inaczej: zmienna wskInt2D przechowuje adres innego wskaźnika, który z kolei przechowuje adres zmiennej typu int.
+
+📌 Jest to przydatne np. przy dynamicznych tablicach 2D:
+
+int** tablica = new int*[wiersze];
+for(int i = 0; i < wiersze; ++i)
+    tablica[i] = new int[kolumny];
+➡️ Przypisanie nullptr oznacza, że wskInt2D na razie nie wskazuje na żaden obiekt (jest "pusty").
+
+Listing 9.3:
+1. Wiersz 4: wskInt1D = new int[3]; → Ile pamięci zostanie zalokowane?
+Zostanie zaalokowana pamięć na 3 elementy typu int.
+
+📌 Jeśli sizeof(int) == 4 bajty (typowe na większości systemów), to:
+
+➡️ 3 × 4 bajty = 12 bajtów zostanie przydzielone dynamicznie.
+
+2. Wiersze 7 i 11 → Co powoduje operator +?
+Operator + w kontekście wskaźników przesuwa wskaźnik o podaną liczbę elementów (nie bajtów):
+
+Wiersz 7:
+*(wskInt1D + 1) = 5;
+➡️ Oznacza: przesuń wskaźnik o 1 element typu int (czyli o 4 bajty) i zapisz tam 5.
+To równoważne z: wskInt1D[1] = 5;
+
+Wiersz 11:
+*(wskInt1D + 2)
+➡️ Oznacza: odczytaj wartość trzeciego elementu tablicy (wskInt1D[2]).
+
+🟦 Podsumowując: operator + przy wskaźnikach wykonuje przesunięcie o N * sizeof(typ), zależnie od typu, na jaki wskazuje wskaźnik.
+
+3. Wiersze 15 i 17 → Co powoduje operator ++?
+Operator ++ przesuwa wskaźnik do kolejnego elementu tablicy:
+
+Przykład:
+iter++;  // przesunięcie wskaźnika iter z wskInt1D[0] -> wskInt1D[1]
+📌 W kontekście wskaźników oznacza: dodaj 1 do adresu, ale w jednostce „rozmiar typu”, np. dla int o 4 bajty.
+
+🟢 To pozwala na iterowanie po tablicy dynamicznej bez użycia indeksów.
+
+Listing 9.4:
+ 1. Dlaczego lokowanie pamięci odbywa się dwuetapowo?
+Alokacja pamięci w wierszu:
+
+wskInt2D = new int*[w];     // Etap 1
+tworzy tablicę wskaźników – każdy wskaźnik będzie później wskazywać na jeden wiersz.
+
+A następnie:
+
+for(int i=0; i<w; i++)
+    wskInt2D[i] = new int(k);   // Etap 2
+alokuje oddzielnie pamięć dla każdego wiersza (czyli tablicę kolumn).
+
+📌 Dlaczego tak:
+C++ nie ma wbudowanego typu "tablica 2D dynamiczna" – trzeba to zrobić ręcznie.
+
+Alokujemy najpierw „kontener” wskaźników (1D), a potem podłączamy do nich „podtablice” (drugie wymiary).
+
+🔹 2. Dlaczego zwalnianie pamięci odbywa się dwuetapowo?
+Wiersz 20:
+
+for(int i=0; i<k; i++) delete [] wskInt2D[i]; 
+Najpierw trzeba usunąć każdy wiersz (czyli podtablicę), bo każdy wskInt2D[i] wskazuje na osobno zaalokowaną tablicę int[k].
+
+Potem:
+
+delete [] wskInt2D;
+zwalniamy pamięć na tablicę wskaźników.
+
+📌 Dlaczego dwuetapowo:
+Każdy rząd jest osobno zaalokowany → trzeba go osobno zwolnić.
+
+Jeśli pominiesz pierwszy krok, to wyciekną całe wiersze (memory leak).
+
+
+3. Ilustracja: jak wygląda pamięć w tablicy 2D (dla w=3, k=4)
+
+wskInt2D ---> +-------+       +--> [0][0] [0][1] [0][2] [0][3]
+              |   *   |------>+     (wartości: 0+0, 0+1, ...)
+              +-------+       +--> [1][0] [1][1] [1][2] [1][3]
+              |   *   |------>+     (wartości: 1+0, 1+1, ...)
+              +-------+       +--> [2][0] [2][1] [2][2] [2][3]
+              |   *   |------>+     (wartości: 2+0, 2+1, ...)
+              +-------+
+wskInt2D to wskaźnik na tablicę 3 wskaźników (int*)
+
+Każdy z tych wskaźników pokazuje na oddzielną tablicę int[4]
+
+Listing 9.5:
+🔹 1. Wiersze 5 i 6 – Dlaczego to nie zadziała?
+
+// int & refInt = new int;   // ❌
+// int & refInt = 4;         // ❌
+❌ Wiersz 5: int & refInt = new int;
+new int zwraca wskaźnik (int*), a nie referencję.
+
+Próbujesz przypisać wskaźnik do referencji, co jest niespójne typowo.
+
+📛 Błąd kompilacji: niezgodność typów — nie można przypisać int* do int&.
+
+❌ Wiersz 6: int & refInt = 4;
+4 to literał liczbowy, niezmienny — nie można zrobić referencji do tymczasowego literalnego int, chyba że const int&.
+
+✅ Poprawna wersja:
+
+
+const int & ref = 4; // dozwolone, bo to const-referencja
+🔹 2. Wiersz 14 – Co się tutaj dzieje?
+
+refInt = b;
+👉 refInt jest referencją do a (z linii 11).
+Więc to nie znaczy: "refInt zaczyna wskazywać na b".
+
+To znaczy:
+➡️ Wartość b zostaje przypisana do a przez refInt.
+
+Bo refInt to alias zmiennej a, więc przypisując do niego, modyfikujesz a, a nie zmieniasz powiązania referencji.
+
+🟢 Po tej linii: a == 5, b == 5.
+
+🔹 3. Wiersze 14 vs 24 – Jaka jest różnica?
+
+refInt = b;      // Wiersz 14
+wskInt = &B;     // Wiersz 24
+Linia	Typ	Co się dzieje
+14	Referencja	Przypisanie wartości b do a (bo refInt to a)
+24	Wskaźnik	Zmiana wskaźnika wskInt, by teraz wskazywał na B
+
+🟡 Kluczowa różnica:
+
+Referencja jest aliasem – nie można jej „przełączyć” na inną zmienną.
+
+Wskaźnik to zmienna – możesz go dowolnie przekierowywać (wsk = &innyObiekt).
+
+🔹 4. Czy rozmiar referencji zależy od typu? (czy to pytanie ma sens?)
+
+sizeof(int &)       // linia 31
+sizeof(refInt)      // linia 32
+sizeof(Glon &)      // linia 33
+sizeof(refGlon)     // linia 34
+✅ Takie pytanie ma sens – technicznie, ale:
+sizeof(refInt) = sizeof(int)
+
+sizeof(refGlon) = sizeof(Glon)
+
+📌 Dlaczego?
+Bo referencja nie ma rozmiaru jako osobna struktura — to tylko alias istniejącej zmiennej.
+Nie istnieje fizycznie jako zmienna — kompilator zamienia użycie referencji na bezpośredni dostęp do oryginału.
+
+🟡 Zatem:
+
+➡️ sizeof(ref) = sizeof(typ, na który wskazuje)
+➡️ Ale sizeof(int&) jest poprawny składniowo, choć to tylko alias do sizeof(int)
+
+Lab10:
+1. Czym różni się wektor od „zwykłej” tablicy dynamicznej?
+Cecha	std::vector	Tablica dynamiczna (new[])
+Zarządzanie pamięcią	Automatyczne (RAII)	Ręczne (trzeba użyć delete[])
+Rozmiar	Dynamicznie rośnie	Stały po alokacji
+Bezpieczeństwo	Ma metody (np. .at()) z kontrolą zakresu	Brak kontroli zakresu
+Funkcjonalność	Posiada wiele metod (push_back, size, clear)	Tylko indeksowanie
+Przenoszalność	Preferowana w nowoczesnym C++	Częściej używana w starszym kodzie
+
+2. Czym różni się wektor od zbioru (std::set)?
+Cecha	std::vector	std::set
+Kolejność	Zachowuje kolejność dodania	Przechowuje dane posortowane
+Powtarzalność	Pozwala na duplikaty	Nie pozwala na duplikaty
+Dostęp	Indeksowany (np. vec[i])	Nie ma indeksów
+Implementacja	Ciągła tablica	Struktura drzewa (RB-tree)
+
+3. Czym różni się mapa (std::map) od wektora?
+Cecha	std::vector	std::map
+Typ danych	Pojedyncze elementy	Klucz-wartość (key-value)
+Dostęp	Indeksy liczbowe (vec[i])	Klucze dowolnego typu (map[key])
+Kolejność	Zachowuje kolejność	Sortuje po kluczu
+Wyszukiwanie	Wymaga przeszukania liniowego	Wydajne (log(n)) przez drzewo
+
+4. Co ma wspólnego zbiór z mapą?
+Oba są strukturami opartymi na drzewie binarnym (RB-tree).
+
+Oba są uporządkowane kontenery STL.
+
+Oba nie dopuszczają duplikatów (mapa nie pozwala na powtarzające się klucze, a zbiór – na powtarzające się elementy).
+
+Oba oferują szybkie operacje insert, erase, find – o złożoności O(log n).
+
+5. Jak nazywa się specjalny wskaźnik przewidziany do pracy z kontenerami?
+✅ Iterator – specjalny obiekt, który działa jak wskaźnik, ale przystosowany do pracy z kontenerami STL. Pozwala na dostęp, poruszanie się i modyfikację elementów.
+
+6. W jaki sposób przeciąża się operator >>?
+Przeciążenie operatora >> (np. do wczytywania z std::cin) realizuje się jako funkcja zewnętrzna (nie członkowska), np.:
+
+
+std::istream& operator>>(std::istream& in, MyClass& obj) {
+    in >> obj.a >> obj.b;
+    return in;
+}
+7. W jaki sposób przeciąża się operator <<?
+Podobnie jak >>, operator << (np. do std::cout) przeciąża się jako funkcja zewnętrzna:
+
+
+std::ostream& operator<<(std::ostream& out, const MyClass& obj) {
+    out << obj.a << " " << obj.b;
+    return out;
+}
+8. W jaki sposób przeciąża się operator ++?
+Można przeciążyć wersję preinkrementacyjną i postinkrementacyjną:
+
+
+// Preinkrementacja (++obj)
+MyClass& operator++() {
+    ++a;
+    return *this;
+}
+
+// Postinkrementacja (obj++)
+MyClass operator++(int) {
+    MyClass temp = *this;
+    ++(*this);
+    return temp;
+}
+9. W jaki sposób przeciąża się operator !?
+Jest to operator jednoargumentowy, przeciążany zwykle jako metoda:
+
+bool MyClass::operator!() const {
+    return a == 0; // dowolna logika
+}
+
+1. Listing 10.1, wiersze 5, 6, 7 i 8 → Do czego służy metoda push_back?
+Metoda push_back służy do dodawania nowego elementu na koniec wektora. W tym przypadku dodaje kolejne wartości 0, 1, 2, 3 do dynamicznej tablicy (wektora). Dzięki temu wektor zwiększa swój rozmiar i przechowuje te elementy.
+
+2. Listing 10.1, wiersz 10 → Do czego służy metoda size?
+Metoda size zwraca aktualną liczbę elementów przechowywanych w wektorze. W tym wierszu kodu jest używana do wyświetlenia rozmiaru wektora, czyli ile elementów w nim jest.
+
+3. Listing 10.1, wiersz 17 → Jak działa pętla for?
+Pętla for(double d : wektor) to tzw. pętla zakresowa (range-based for loop). Dla każdego elementu d w wektorze wektor wykonywana jest instrukcja w ciele pętli (w tym przypadku cout << d << " ";). Pozwala to na łatwe przechodzenie po wszystkich elementach kolekcji bez użycia indeksów.
+
+4. Listing 10.1, wiersz 21 → Do czego służy metoda resize?
+Metoda resize zmienia rozmiar wektora. W tym wypadku wektor jest powiększany do rozmiaru 12. Jeśli nowy rozmiar jest większy niż aktualny, nowe elementy są inicjalizowane domyślną wartością (dla typu double będzie to 0.0). Dzięki temu można później bezpiecznie zapisywać dane pod nowymi indeksami.
+
+5. Listing 10.1, wiersz 35 → Dlaczego została użyta referencja?
+W pętli for(double & d : wektor) zmienna d jest referencją do elementu wektora, co oznacza, że modyfikacje na d wpływają bezpośrednio na elementy wektora. Gdyby d była zwykłą zmienną (kopią), zmiany w pętli nie zmieniłyby elementów w wektorze.
+
+6. Listing 10.1, wiersz 41 → Do czego służy metoda clear?
+Metoda clear usuwa wszystkie elementy z wektora, czyli ustawia jego rozmiar na zero. Wektor pozostaje wciąż gotowy do użycia, ale nie zawiera żadnych elementów.
+
+1. Listing 10.2, wiersz 7 → Skąd się wziął GEN?
+GEN to prawdopodobnie nazwa przestrzeni nazw (namespace) lub klasy, która zawiera metodę losujOdZeraDo(int max). Jest to funkcja generująca losowe liczby całkowite od 0 do max (w tym przypadku do 20). Taka funkcja nie jest standardową funkcją C++, więc najpewniej pochodzi z wcześniejszej części projektu lub własnej biblioteki, którą autor zadania używa do generowania liczb losowych.
+
+2. Listing 10.2, wiersz 14 → Jak określa się zakres sortowania?
+Zakres sortowania określa się przez podanie dwóch iteratorów:
+
+wektor.begin() – iterator wskazujący na pierwszy element wektora,
+
+wektor.end() – iterator wskazujący za ostatni element wektora.
+
+Funkcja sort() sortuje elementy od iteratora begin() do iteratora end() (nie włączając elementu na end()), czyli cały wektor.
+
+1. Listing 10.3, wiersz 3 → Do czego służy metoda insert?
+Metoda insert służy do dodawania elementów do zbioru (kontenera set). Jeśli element już istnieje w zbiorze, to nie zostanie dodany ponownie — zbiór przechowuje tylko unikalne elementy.
+
+2. Listing 10.3 → W jaki sposób zostało pokazane, że zbiór nie powiela elementów?
+W liniach 10-14 do zbioru wstawiane są elementy, z których niektóre (np. "Adam", "Ewa", "Maciek") są już wcześniej dodane. W wyniku wyświetlenia zawartości zbioru (w liniach 16-17 i dalej w pętli), widać, że elementy te pojawiają się tylko raz, co pokazuje, że set automatycznie odrzuca duplikaty.
+
+3. Listing 10.3, wiersz 19 → Jaka jest początkowa pozycja iteratora?
+Iterator iter jest ustawiony na początek zbioru, czyli wskazuje na pierwszy element zbioru (imiona.begin()).
+
+4. Listing 10.3, wiersz 20 → Jak sprawdza się czy iterator osiągnął ostatni element w kontenerze?
+Sprawdza się to porównując iterator iter z imiona.end(), który wskazuje za ostatnim elementem zbioru. Pętla działa dopóki iter != imiona.end(). Gdy iter osiągnie end(), oznacza to, że przeszliśmy przez wszystkie elementy.
+
+5. Listing 10.3, wiersz 22 → Jak przesuwa się iterator?
+Iterator jest przesuwany na kolejny element za pomocą operatora inkrementacji iter++.
+
+1. Listing 10.4, wiersz 3 → Jak definiuje się obiekt klasy map?
+Obiekt klasy map definiuje się podając dwa typy szablonu: typ klucza i typ wartości. W tym przypadku map<char,double> oznacza mapę, która przechowuje pary: klucz typu char i wartość typu double. Obiekt pomiary jest więc słownikiem, gdzie do liter ('A', 'B', itd.) przypisane są liczby zmiennoprzecinkowe.
+
+2. Listing 10.4, wiersze od 5 do 10 → W jaki sposób umieszcza się elementy w mapie?
+Elementy umieszcza się w mapie za pomocą metody insert(), która przyjmuje obiekt typu pair<klucz, wartość>. W przykładzie użyto pair<char,double>, np. pair<char,double>('A', 20). Dodanie klucza, który już istnieje, nie zmienia istniejącej wartości — wstawienie ('A',40) po wcześniejszym dodaniu ('A',20) nie zastąpi wartości.
+
+3. Listing 10.4, wiersz 14 → W jaki sposób uzyskuje się dostęp do elementu mapy?
+Dostęp do wartości pod danym kluczem uzyskuje się za pomocą operatora indeksowania [], np. pomiary[c]. Zwraca wartość powiązaną z kluczem c. Jeśli klucz nie istnieje, operator [] doda go do mapy z domyślną wartością (dla typu double jest to 0.0).
+
+4. Listing 10.4, wiersz 16 → Do czego służy metoda count?
+Metoda count zwraca liczbę wystąpień danego klucza w mapie. Ponieważ mapy przechowują unikalne klucze, wynik będzie 0 (jeśli klucza nie ma) lub 1 (jeśli klucz jest obecny).
+
+5. Listing 10.4, wiersz 18 → Do czego służy metoda erase?
+Metoda erase usuwa element o podanym kluczu z mapy. W tym przypadku pomiary.erase('A') usuwa z mapy element o kluczu 'A'.
+
+1. Listing 10.5, wiersze 1 i 2 → Czy argumenty mogą być przekazane jako referencje do stałych?
+Tak, argumenty mogą i powinny być przekazane jako referencje do stałych, czyli tak:
+
+cpp
+Skopiuj kod
+ostream &operator<<(ostream &strumien, const Prostokat &prostokat)
+Dlaczego?
+
+ostream &strumien pozostaje jako referencja (bez const), bo chcemy zapisywać do strumienia.
+
+Prostokat &prostokat powinno być const Prostokat &prostokat, ponieważ operator << zwykle nie modyfikuje obiektu, a przyjęcie referencji do stałej pozwala na przekazywanie zarówno stałych, jak i zmiennych obiektów, zwiększając bezpieczeństwo i elastyczność.
+
+2. Listing 10.6 → Czy obiekt klasy Kwadrat wyświetla się poprawnie? Dlaczego?
+To zależy od implementacji klasy Kwadrat.
+
+Jeśli Kwadrat jest klasą dziedziczącą po Prostokat i ma własną metodę doTekstu() przesłaniającą (overriding) tę z Prostokat, to operator << wywołany na obiekcie Kwadrat (przez cout << k) wyświetli poprawny tekst specyficzny dla Kwadrat, pod warunkiem że wywołanie doTekstu() jest wirtualne w klasie bazowej (Prostokat).
+
+Jeśli doTekstu() nie jest metodą wirtualną, to wywołanie prostokat.doTekstu() w operatorze << wywoła metodę klasy Prostokat, nawet jeśli obiekt jest klasy Kwadrat, co spowoduje, że obiekt Kwadrat może się nie wyświetlać poprawnie.
+
+Listing 10.7, wiersze 1 i 2 → Czy argumenty mogą być przekazane jako referencje do stałych?
+Argument istream &strumien nie może być referencją do stałej (const), ponieważ operator >> odczytuje dane ze strumienia i modyfikuje jego stan (np. wskaźnik pozycji w strumieniu), więc strumień musi być modyfikowalny.
+
+Argument Prostokat &prostokat nie powinien być przekazany jako referencja do stałej (const), ponieważ operator >> musi zmodyfikować obiekt prostokat (np. zmienić jego boki za pomocą zmienBoki), więc musi mieć dostęp do niemodyfikowalnej referencji.
+
+1. Jaka jest różnica pomiędzy operatorami postinkrementacji i preinkrementacji?
+Preinkrementacja (++obj) – najpierw zwiększa wartość obiektu, potem zwraca odwołanie do zmodyfikowanego obiektu.
+
+Postinkrementacja (obj++) – najpierw zwraca kopię obiektu przed zwiększeniem, a dopiero potem zwiększa wartość obiektu.
+
+W praktyce:
+
+Preinkrementacja jest zazwyczaj bardziej efektywna (nie wymaga kopiowania).
+
+Postinkrementacja wymaga dodatkowego parametru int (który nie jest używany) tylko po to, aby odróżnić ją od preinkrementacji.
+
+2. Listing 10.9, wiersz 1 → Po co jest ten int?
+Parametr int w definicji operatora operator++(int) jest sztucznym parametrem służącym do rozróżnienia operatora postinkrementacji od preinkrementacji, która nie ma żadnych parametrów.
+
+3. Listing 10.9, wiersze od 3 do 7 → Co oznacza this?
+this to wskaźnik do bieżącego obiektu klasy, na którym wywoływana jest metoda. Umożliwia dostęp do jego pól i metod.
+
+4. Listing 10.9, wiersze od 3 do 6 → Czy this jest niezbędny?
+Nie jest niezbędny jeśli nie ma konfliktu nazw, np. gdy nie ma lokalnych zmiennych lub parametrów o takiej samej nazwie jak pola klasy. Można napisać:
+
+bok1 *= 2;
+bok2 *= 2;
+obliczPole();
+obliczObwod();
+i kod będzie działał tak samo.
+
+1. Co to oznacza, że definicja metody jest wewnątrz definicji klasy?
+Gdy metoda jest zdefiniowana wewnątrz definicji klasy (czyli w ciele klasy, a nie tylko zadeklarowana), jest traktowana jako metoda inline. Oznacza to, że kompilator może (ale nie musi) wstawić kod tej funkcji bezpośrednio w miejsce jej wywołania, co może przyspieszyć działanie programu przez uniknięcie wywołań funkcji.
+
+2. Listing 10.11, wiersze 2 i 3 → W jaki sposób wyświetlana jest zmienna typu bool?
+Domyślnie zmienna typu bool wyświetlana jest jako 0 (dla false) lub 1 (dla true) w standardowym strumieniu cout.
+
+Jeśli chcemy, aby zamiast cyfr pojawiały się słowa true lub false, należy użyć:
+
+cout << boolalpha;
+Przykład:
+
+cout << boolalpha << (!p0) << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
