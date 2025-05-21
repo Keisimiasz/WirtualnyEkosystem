@@ -91,6 +91,18 @@ build CMakeFiles/WirtualnyEkosystem.dir/nisza.cpp.obj: CXX_COMPILER__WirtualnyEk
   OBJECT_DIR = CMakeFiles\WirtualnyEkosystem.dir
   OBJECT_FILE_DIR = CMakeFiles\WirtualnyEkosystem.dir
 
+build CMakeFiles/WirtualnyEkosystem.dir/zlab10.cpp.obj: CXX_COMPILER__WirtualnyEkosystem_unscanned_Debug D$:/WirtualnyEkosystem/zlab10.cpp || cmake_object_order_depends_target_WirtualnyEkosystem
+  DEP_FILE = CMakeFiles\WirtualnyEkosystem.dir\zlab10.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\WirtualnyEkosystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\WirtualnyEkosystem.dir
+
+build CMakeFiles/WirtualnyEkosystem.dir/zlab03.cpp.obj: CXX_COMPILER__WirtualnyEkosystem_unscanned_Debug D$:/WirtualnyEkosystem/zlab03.cpp || cmake_object_order_depends_target_WirtualnyEkosystem
+  DEP_FILE = CMakeFiles\WirtualnyEkosystem.dir\zlab03.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\WirtualnyEkosystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\WirtualnyEkosystem.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WirtualnyEkosystem
@@ -99,7 +111,7 @@ build CMakeFiles/WirtualnyEkosystem.dir/nisza.cpp.obj: CXX_COMPILER__WirtualnyEk
 #############################################
 # Link the executable WirtualnyEkosystem.exe
 
-build WirtualnyEkosystem.exe: CXX_EXECUTABLE_LINKER__WirtualnyEkosystem_Debug CMakeFiles/WirtualnyEkosystem.dir/main.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/organizm.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/generatorlosowy.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/sasiedztwo.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/mieszkaniec.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/osobniki.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/nisza.cpp.obj
+build WirtualnyEkosystem.exe: CXX_EXECUTABLE_LINKER__WirtualnyEkosystem_Debug CMakeFiles/WirtualnyEkosystem.dir/main.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/organizm.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/generatorlosowy.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/sasiedztwo.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/mieszkaniec.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/osobniki.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/nisza.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/zlab10.cpp.obj CMakeFiles/WirtualnyEkosystem.dir/zlab03.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\WirtualnyEkosystem.dir

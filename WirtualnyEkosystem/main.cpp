@@ -3,8 +3,9 @@
 #include "ustawienia.h"
 #include "generatorlosowy.h"
 #include "sasiedztwo.h"
-
-
+#include "zlab10.h"
+#include "zlab03.h"
+#include <windows.h>
 #include "nisza.h"
 #include "osobniki.h"
 
@@ -277,6 +278,14 @@ int main() {
     return 0;
 }*/
 
+int main() {
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
 
+    Prostokat p0("Prostokat", 2, 3);
+    cout << "!p0=" << !p0 << endl;
+    Prostokat p1("Prostokat", 0, 0);
+    cout << "!p1=" << !p1 << endl;
 
-
+    return 0;
+}

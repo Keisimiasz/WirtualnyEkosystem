@@ -21,4 +21,8 @@ add_executable(WirtualnyEkosystem main.cpp
         osobniki.h
         nisza.cpp
         nisza.h
+        zlab10.cpp
+        zlab10.h
+        zlab03.h
+        zlab03.cpp
                 )
