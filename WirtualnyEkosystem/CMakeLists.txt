@@ -25,4 +25,8 @@ add_executable(WirtualnyEkosystem main.cpp
         zlab10.h
         zlab03.h
         zlab03.cpp
+        zlab12.h
+        zlab12.cpp
+        srodowisko.cpp
+        srodowisko.h
                 )

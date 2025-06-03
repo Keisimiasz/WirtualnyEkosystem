@@ -26,10 +26,10 @@ public:
 
     Polozenie losujSasiada(RodzajMieszkanca rodzaj);
 
-    static void zmienIdeksyWgPolozenia(
+    static void zmienIndeksyWgPolozenia(
             Polozenie polozenie, long &wiersz, long &kolumna);
 
-    static void zmienIdeksyWgPolozenia(
+    static void zmienIndeksyWgPolozenia(
             Polozenie polozenie, unsigned int &wiersz,
             unsigned int &kolumna);
 
